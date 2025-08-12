@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 可搜尋的城市清單 -->
+        <AutoCompleteTextView
+            android:id="@+id/actvCity"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="選擇或輸入城市"
+            android:completionThreshold="1"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 24 / 12 小時制切換 -->
+        <Switch
+            android:id="@+id/switch24Hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用 24 小時制"
+            android:checked="true"
+            android:layout_marginBottom="24dp" />
+
+        <!-- 完整日期＋時間 -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="— 這裡顯示完整日期時間 —"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 問候語 -->
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="— 這裡顯示問候語 —"
+            android:textSize="18sp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- 手動更新一次 -->
+        <Button
+            android:id="@+id/btnShowAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新一次"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 切換背景顏色 -->
+        <Button
+            android:id="@+id/btnToggleBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切換背景顏色" />
+
+        <!-- 加入最愛 -->
+        <Button
+            android:id="@+id/btnAddFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加入最愛"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 收藏清單標題 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的最愛"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 空清單提示 -->
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尚未加入任何城市"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 收藏清單 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFavorites"
+            android:layout_width="260dp"
+            android:layout_height="160dp"
+            android:overScrollMode="never"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
