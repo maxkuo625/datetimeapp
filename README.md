@@ -27,6 +27,6 @@
 
 ---
 
-## 📷 截圖展示
+## 📷 APP畫面展示
 <img width="1080" height="2400" alt="Screenshot_20250812_152336" src="https://github.com/user-attachments/assets/74ed41fd-89d1-4d79-979e-5da2f5362913" />
 
